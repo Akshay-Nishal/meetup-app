@@ -31,6 +31,16 @@ function HomePage(props) {
   )
 }
 
+// export async function getServerSideProps(context) {    // we used getServerSideProps because we dont manually have to regenerate page using Revalidate. it automaticaly gets regenereated for every request coming
+//   const req = context.req
+//   const res = context.res
+//   return {
+//     props:{
+//       meetups:dummyMeetup
+//     }
+//   }
+// }
+
 export async function getStaticProps() {
   //fetch data with api
   return {
