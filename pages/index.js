@@ -25,11 +25,19 @@ const dummyMeetup = [
     },
 ]
 
-function HomePage() {
+function HomePage(props) {
   return (
-    <MeetupList meetups = {dummyMeetup}/>
+    <MeetupList meetups = {props.meetups}/>
   )
 }
 
+export async function getStaticProps() {
+  //fetch data with api
+  return {
+    props:{
+      meetups:dummyMeetup
+    }
+  } //always return object data type
+}  //reserved name in next. if next find it, it executes it during pre-rendering process
 
 export default HomePage
